@@ -29,8 +29,13 @@
 
 7. Launch ETL application with: `/home/dev/Projects/fred/app.py [options] /home/dev/Projects/fred/config.json`
 
+## Minimum Requirements
+1. Postgres
+2. Python (Version 3.5.x)
+3. Python Libraries: 
+    - Requests
+    - Psycopg2
+
 ## SQL Example
 ### Average unemployment between 1980 and 2015
-<code>
-select date_trunc('year', date_stamp), avg(val_sum) from (select date(date_stamp) date_stamp, sum(value) val_sum from economics.unrate where date_stamp between '19791231' and '20151231'  group by 1) subq group by 1 order by 1 desc;
-</code>
+<code>select date_trunc('year', date_stamp), avg(val_sum) from (select date(date_stamp) date_stamp, sum(value) val_sum from economics.unrate where date_stamp between '19791231' and '20151231'  group by 1) subq group by 1 order by 1 desc;</code>

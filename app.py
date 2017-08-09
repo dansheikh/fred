@@ -6,7 +6,6 @@ import datetime
 import requests
 import psycopg2
 import uuid
-import sys
 
 
 def _check_value(value):
